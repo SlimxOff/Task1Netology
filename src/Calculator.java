@@ -12,13 +12,7 @@ public class Calculator {
     BinaryOperator<Integer> multiply = (x, y) -> x * y;
 
     // Добавлен блок проверки деления на ноль
-    BinaryOperator<Integer> devide = (x, y) -> {
-        if (y != 0) {
-            return x / y;
-        } else {
-            throw new ArithmeticException("На ноль делить нельзя");
-        }
-    };
+    BinaryOperator<Integer> devide = (x, y) -> y==0 ? 0 : x/y;
 
     UnaryOperator<Integer> pow = x -> x * x;
     UnaryOperator<Integer> abs = x -> x > 0 ? x : x * -1;
